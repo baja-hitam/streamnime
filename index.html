@@ -4,10 +4,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Streaming Anime</title>
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@clappr/player@latest/dist/clappr.min.js"></script>
+    <link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/vidstack@next/player/styles/default/theme.min.css"
+/>
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/vidstack@next/player/styles/default/layouts/video.min.css"
+/>
 </head>
 <body style="max-width: 420px; border: 1px solid black; padding: 10px;">
-    <div id="player"></div>
+    <media-player id="player" src="">
+      <media-provider></media-provider>
+      <media-video-layout"></media-video-layout>
+    </media-player>
     <br>
     <input type="text" name="" id="queryInput" placeholder="Search..." value=""><button id="searchBtn">Search</button>
 
@@ -33,5 +43,9 @@
         Loading...
     </div>
     <script src="script.js"></script>
+    <script
+  src="https://cdn.jsdelivr.net/npm/vidstack@next/cdn/with-layouts/vidstack.js"
+  type="module"
+></script>
 </body>
 </html>
