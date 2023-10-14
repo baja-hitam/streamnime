@@ -109,9 +109,7 @@ function displayWatchInfo(episodeData) {
         watchBtn[i].addEventListener("click",function () {
             videoPlayer.style.display = 'block';
             const serverUrl = this.value;
-            //videoPlayer.src = `https://9anime.skin/stream/play.php?slug=${serverUrl}`;
-            var player = document.getElementById('player');
-            player = new Clappr.Player({source: `${serverUrl}`, parentId: "#player"});
+            videoPlayer.src = `${serverUrl}`;
         });
     };
 };
