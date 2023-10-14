@@ -81,11 +81,11 @@ function displayAnimeInfo(data) {
         const episodeId = document.getElementById("selectElement").value;
         const res = await fetch(`https://api.consumet.org/anime/gogoanime/watch/${episodeId}`);
         const episodeData = await res.json();
-        displayWatchInfo(episodeData);
+        displayWatchInfo(episodeData,data.title);
     });
 };
 
-function displayWatchInfo(episodeData) {
+function displayWatchInfo(episodeData,titleName) {
     watchContainer.style.display = 'block';
     mainLoading.style.display = "none";
 
@@ -109,6 +109,7 @@ function displayWatchInfo(episodeData) {
         watchBtn[i].addEventListener("click",function () {
             videoPlayer.style.display = 'block';
             const serverUrl = this.value;
+            videoPlayer.title = titleName;
             videoPlayer.src = `${serverUrl}`;
         });
     };
